@@ -1,21 +1,26 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-	http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.maximeroussy</groupId>
     <artifactId>invitrode</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.5-SNAPSHOT</version>
     <name>invitrode</name>
     <url>https://github.com/maximeroussy/invitrode</url>
 
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <releaseProfiles>release</releaseProfiles>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -23,6 +28,38 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <developers>
         <developer>
@@ -44,7 +81,7 @@
     <distributionManagement>
         <repository>
             <id>invitrode</id>
-            <url>https://api.bintray.com/maven/maximeroussy/maven/invitrode/;publish=1</url>
+            <url>https://api.bintray.com/maven/maximeroussy/maven/invitrode</url>
         </repository>
     </distributionManagement>
 </project>
