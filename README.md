@@ -17,27 +17,34 @@ This library can be used in an infinite amount of ways:
 Using the library is extremely simple.
 
 Simply create a RandomWord object:
-	RandomWord myWordGenerator = new RandomWord();
+```java
+RandomWord myWordGenerator = new RandomWord();
+```
 And use the getNewWord method to generate a new random word on demand:
-	String myNewWord = myWordGenerator.getNewWord(int lengthOfWord);
+```java
+String myNewWord = myWordGenerator.getNewWord(int lengthOfWord);
+```
 
 ##Downloads
 ###Gradle (preferred):
 
 Add the jitpack repository:
 
+```gradle
     repositories {
         maven { url "https://jitpack.io" }
     }
 
     dependencies {
-        compile 'com.github.maximeroussy:invitrode:1.0.8'
+        compile 'com.github.maximeroussy:invitrode:1.0.9'
     }
+```
 
 ###Maven:
 
 Then add the Maven dependency:
 
+```xml
 	<repository>
 	    <id>jitpack.io</id>
 	    <url>https://jitpack.io</url>
@@ -48,10 +55,11 @@ Then add the Maven dependency:
 	    <artifactId>invitrode</artifactId>
 	    <version>1.0.8</version>
 	</dependency>
+```
 
 ###Manual:
 
-The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.8.zip)  to include yourself in your projects.
+The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.9.zip)  to include yourself in your projects.
 
 ##Inspiration & Credits
 Bi-gram source and general concept based on [Scrollback's generate.js](https://github.com/scrollback/scrollback/blob/master/lib/generate.js)  & described in [this blog post](https://www.hackerearth.com/notes/random-pronouncable-text-generator/)  by Aravind. This is a Java adaptation that will be further developed as a functional and feature rich random word generator.
