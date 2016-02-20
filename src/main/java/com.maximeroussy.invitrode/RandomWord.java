@@ -1,4 +1,4 @@
-package com.maximeroussy.invitrode;
+package main.java.com.maximeroussy.invitrode;
 
 import java.util.Arrays;
 import java.util.Random;

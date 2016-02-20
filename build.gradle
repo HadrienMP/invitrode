@@ -1,15 +1,47 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'maven'
 apply plugin: 'application'
+apply plugin: 'java-library-distribution'
 
-mainClassName = 'com.maximeroussy.invitrode.RandomWord'
+group = 'com.github.maximeroussy'
+
+mainClassName = 'main.java.com.maximeroussy.invitrode.RandomWord'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+repositories {
+    mavenCentral()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+distributions {
+    main{
+        baseName = 'invitrode'
+    }
+}
+
 jar {
     baseName = 'invitrode'
-    version =  '1.0.7'
+    version =  '1.0.8'
+    manifest {
+        attributes 'Main-Class': 'main.java.com.maximeroussy.invitrode.RandomWord'
+    }
 }
 
 task wrapper(type: Wrapper) {

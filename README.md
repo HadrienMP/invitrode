@@ -26,41 +26,32 @@ And use the getNewWord method to generate a new random word on demand:
 
 Add the jitpack repository:
 
-	allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
-	}
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 
-Then add the gradle dependency:
-
-	dependencies {
-	        compile 'com.github.maximeroussy:invitrode:v1.0.0'
-	}
+    dependencies {
+        compile 'com.github.maximeroussy:invitrode:1.0.8'
+    }
 
 ###Maven:
 
-Add the jitpack repository:
-
-	<repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
-
 Then add the Maven dependency:
 
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+	
 	<dependency>
 	    <groupId>com.github.maximeroussy</groupId>
 	    <artifactId>invitrode</artifactId>
-	    <version>v1.0.0</version>
+	    <version>1.0.8</version>
 	</dependency>
 
 ###Manual:
 
-The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.5.zip)  to include yourself in your projects.
+The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.8.zip)  to include yourself in your projects.
 
 ##Inspiration & Credits
 Bi-gram source and general concept based on [Scrollback's generate.js](https://github.com/scrollback/scrollback/blob/master/lib/generate.js)  & described in [this blog post](https://www.hackerearth.com/notes/random-pronouncable-text-generator/)  by Aravind. This is a Java adaptation that will be further developed as a functional and feature rich random word generator.
