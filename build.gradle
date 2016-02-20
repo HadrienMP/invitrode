@@ -1,4 +1,7 @@
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.maximeroussy.invitrode.RandomWord'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
