@@ -2,7 +2,7 @@
 
 A Java/Android library to generate random english pronounceable words based on a collection of constructed bi-grams.
 
-[![MIT License](http://img.shields.io/badge/license-MIT-green.svg) ](https://github.com/maximeroussy/invitrode/license.md)
+[![MIT License](http://img.shields.io/badge/license-MIT-green.svg) ](https://github.com/maximeroussy/invitrode/license.md)[![Jitpack Release](https://jitpack.io/v/maximeroussy/invitrode.svg)](https://jitpack.io/#maximeroussy/invitrode)
 
 ##Summary
 This is a lightweight and focused library. The Java class currently only includes 6 methods. More features are planned that will obviously add to the method count in the future. 
@@ -60,7 +60,7 @@ Then add the Maven dependency:
 
 ###Manual:
 
-The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/invitrode-1.0.4.zip)  to include yourself in your projects.
+The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.5.zip)  to include yourself in your projects.
 
 ##Inspiration & Credits
 Bi-gram source and general concept based on [Scrollback's generate.js](https://github.com/scrollback/scrollback/blob/master/lib/generate.js)  & described in [this blog post](https://www.hackerearth.com/notes/random-pronouncable-text-generator/)  by Aravind. This is a Java adaptation that will be further developed as a functional and feature rich random word generator.
