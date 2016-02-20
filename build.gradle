@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'application'
 
 mainClassName = 'com.maximeroussy.invitrode.RandomWord'
@@ -8,7 +9,7 @@ targetCompatibility = 1.8
 
 jar {
     baseName = 'invitrode'
-    version =  '1.0.6'
+    version =  '1.0.7'
 }
 
 task wrapper(type: Wrapper) {

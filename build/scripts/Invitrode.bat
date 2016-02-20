@@ -69,7 +69,7 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\invitrode-1.0.6.jar
+set CLASSPATH=%APP_HOME%\lib\invitrode-1.0.7.jar
 
 @rem Execute Invitrode
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %INVITRODE_OPTS%  -classpath "%CLASSPATH%" com.maximeroussy.invitrode.RandomWord %CMD_LINE_ARGS%
