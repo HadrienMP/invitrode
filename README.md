@@ -1,4 +1,4 @@
-![logo](/res/invitrode.svg) 
+![logo](res/invitrode.svg) 
 
 A Java/Android library to generate random english pronounceable words based on a collection of constructed bi-grams.
 
