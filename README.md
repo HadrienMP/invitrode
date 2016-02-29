@@ -22,7 +22,12 @@ RandomWord myWordGenerator = new RandomWord();
 ```
 And use the getNewWord method to generate a new random word on demand:
 ```java
+try {
 String myNewWord = myWordGenerator.getNewWord(int lengthOfWord);
+} catch(Exception e) {
+//handle exception
+//the method getNewWord can throw a WordLengthException when the length chosen is outside of the current limits (between 3 and 15 characters)
+}
 ```
 
 ##Downloads
@@ -36,7 +41,7 @@ Add the jitpack repository:
     }
 
     dependencies {
-        compile 'com.github.maximeroussy:invitrode:1.0.9'
+        compile 'com.github.maximeroussy:invitrode:1.0.10'
     }
 ```
 

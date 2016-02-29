@@ -38,7 +38,7 @@ distributions {
 
 jar {
     baseName = 'invitrode'
-    version =  '1.0.9'
+    version =  '1.0.10'
     manifest {
         attributes 'Main-Class': 'main.java.com.maximeroussy.invitrode.RandomWord'
     }
