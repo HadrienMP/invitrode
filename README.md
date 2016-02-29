@@ -58,7 +58,7 @@ Then add the Maven dependency:
 	<dependency>
 	    <groupId>com.github.maximeroussy</groupId>
 	    <artifactId>invitrode</artifactId>
-	    <version>1.0.8</version>
+	    <version>1.0.10</version>
 	</dependency>
 ```
 
