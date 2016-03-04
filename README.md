@@ -16,7 +16,8 @@ This library can be used in an infinite amount of ways:
 ##Demo
 Here's a simple Android app built with the library that demonstrates it's usage:
 
-<a href="url"><img src="/android-demo.gif" align="left" width="200" ></a>
+<a href="https://github.com/maximeroussy/invitrode/android-demo.gif"><img src="/android-demo.gif" align="left" width="300"></a>
+
 
 ##Usage
 Using the library is extremely simple.
