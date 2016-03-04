@@ -8,7 +8,7 @@ A Java/Android library to generate random english pronounceable words based on a
 This is a lightweight and focused library. The Java class currently only includes 6 methods. More features are planned that will obviously add to the method count in the future. 
 
 This library can be used in an infinite amount of ways:
-- generate initial passwords for your user based applications   
+- generate initial passwords for your user based applications
 - suggest character names in your games
 - find a unique name for your child
 - the list goes on...
@@ -16,8 +16,9 @@ This library can be used in an infinite amount of ways:
 ##Demo
 Here's a simple Android app built with the library that demonstrates it's usage:
 
-<a href="https://github.com/maximeroussy/invitrode/android-demo.gif"><img src="/android-demo.gif" align="left" width="300"></a>
-
+<p>
+<a href="https://github.com/maximeroussy/invitrode/blob/master/android-demo.gif"><img src="/android-demo.gif" align="left" width="300"></a>
+</p>
 
 ##Usage
 Using the library is extremely simple.
