@@ -13,17 +13,17 @@ This library can be used in an infinite amount of ways:
 - find a unique name for your child
 - the list goes on...
 
+##Demo
+Here's a simple Android app built with the library that demonstrates it's usage:
+
+![demo](/android-demo.gif)
+
 ##Usage
 Using the library is extremely simple.
 
-Simply create a RandomWord object:
-```java
-RandomWord myWordGenerator = new RandomWord();
-```
-And use the getNewWord method to generate a new random word on demand:
 ```java
 try {
-String myNewWord = myWordGenerator.getNewWord(int lengthOfWord);
+String myNewWord = RandomWord.getNewWord(int lengthOfWord);
 } catch(Exception e) {
 //handle exception
 //the method getNewWord can throw a WordLengthException when the length chosen is outside of the current limits (between 3 and 15 characters)
@@ -67,6 +67,9 @@ Then add the Maven dependency:
 The alternative method is downloading the [latest JAR](https://github.com/maximeroussy/invitrode/archive/1.0.9.zip)  to include yourself in your projects.
 
 ##Inspiration & Credits
+Why the name Invitrode? Why make a random word generator? This should suffice:
+[https://www.youtube.com/watch?v=hsr-QfgFRh8](https://www.youtube.com/watch?v=hsr-QfgFRh8)
+
 Bi-gram source and general concept based on [Scrollback's generate.js](https://github.com/scrollback/scrollback/blob/master/lib/generate.js)  & described in [this blog post](https://www.hackerearth.com/notes/random-pronouncable-text-generator/)  by Aravind. This is a Java adaptation that will be further developed as a functional and feature rich random word generator.
 
 ##License
