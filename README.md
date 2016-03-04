@@ -23,10 +23,10 @@ Using the library is extremely simple.
 
 ```java
 try {
-String myNewWord = RandomWord.getNewWord(int lengthOfWord);
+   String myNewWord = RandomWord.getNewWord(int lengthOfWord);
 } catch(Exception e) {
-//handle exception
-//the method getNewWord can throw a WordLengthException when the length chosen is outside of the current limits (between 3 and 15 characters)
+   //handle exception
+   //the method getNewWord can throw a WordLengthException when the length chosen is outside of the current limits (between 3 and 15 characters)
 }
 ```
 
