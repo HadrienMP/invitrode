@@ -16,7 +16,7 @@ This library can be used in an infinite amount of ways:
 ##Demo
 Here's a simple Android app built with the library that demonstrates it's usage:
 
-![demo](/android-demo.gif)
+<a href="url"><img src="/android-demo.gif" align="left" width="200" ></a>
 
 ##Usage
 Using the library is extremely simple.
