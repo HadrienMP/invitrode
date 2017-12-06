@@ -1,4 +1,4 @@
-package main.java.com.maximeroussy.invitrode;
+package com.maximeroussy.invitrode;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -8,10 +8,39 @@ import java.util.Random;
  */
 public class RandomWord {
 
-    public static String getNewWord(int wordLength) throws WordLengthException{
-        if (wordLength < 3 || wordLength > 15) {
-            throw new WordLengthException("Word length error, words must be between 3 and 15 characters long.");
+    private final WordLength wordLength;
+
+    public RandomWord() {
+        this(new WordLength());
+    }
+
+    public RandomWord(int wordLength) {
+        this(new WordLength(wordLength));
+    }
+
+    public RandomWord(WordLength wordLength) {
+        this.wordLength = wordLength;
+    }
+
+    @Override
+    public String toString() {
+        return generateWord(wordLength);
+    }
+
+    /**
+     * @param wordLength the desired word length
+     * @return a random word
+     * @throws WordLengthException when the word size does is not between 3 and 15
+     */
+    public static String getNewWord(int wordLength) throws WordLengthException {
+        try {
+            return new RandomWord(wordLength).toString();
+        } catch (IllegalArgumentException e) {
+            throw new WordLengthException(e);
         }
+    }
+
+    private static String generateWord(WordLength wordLength) {
         String theNewWord="e";
         while (theNewWord.equals("e")) {
             try {
@@ -22,7 +51,7 @@ public class RandomWord {
         return theNewWord;
     }
 
-    private static String generateRandomWord(int wordLength) {
+    private static String generateRandomWord(WordLength wordLength) {
         String randomWord;
         //-----------------------------------------------------------------------------------------
         //Bigram source and general concept based on https://github.com/scrollback/scrollback & described in https://www.hackerearth.com/notes/random-pronouncable-text-generator/
@@ -34,9 +63,9 @@ public class RandomWord {
         int flag=0;
         int count=0;
         String previousWord;
-        while (randomWord.length()!=wordLength) {
+        while (randomWord.length()!=wordLength.wordLength) {
             previousWord = randomWord;
-            randomWord = addCharacter(startBiGram, wordLength, randomWord, lookupBiGram, nextCharLookup, flag);
+            randomWord = addCharacter(startBiGram, wordLength.wordLength, randomWord, lookupBiGram, nextCharLookup, flag);
             if(previousWord.equals(randomWord)) {
                 count++;
             } else {
