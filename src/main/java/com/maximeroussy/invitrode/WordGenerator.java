@@ -20,14 +20,14 @@ class WordGenerator {
     }
 
     String generateWord(WordLength wordLength) {
-        String theNewWord="e";
-        while (theNewWord.equals("e")) {
+        String word="e";
+        while (word.equals("e")) {
             try {
-                theNewWord = generateRandomWord(wordLength);
+                word = generateRandomWord(wordLength);
             } catch (Exception e) {
             }
         }
-        return theNewWord;
+        return word;
     }
 
     private String generateRandomWord(WordLength wordLength) {
@@ -37,7 +37,7 @@ class WordGenerator {
         String previousWord;
         while (randomWord.length()!=wordLength.wordLength) {
             previousWord = randomWord;
-            randomWord = addCharacter(START_BI_GRAM, wordLength.wordLength, randomWord, LOOKUP_BI_GRAM, NEXT_CHAR_LOOKUP, flag);
+            randomWord = addCharacter(wordLength.wordLength, randomWord, flag);
             if(previousWord.equals(randomWord)) {
                 count++;
             } else {
@@ -54,15 +54,15 @@ class WordGenerator {
         return randomWord;
     }
 
-    private String addCharacter(String[] startBiGram, int desiredLength, String currentWord, String[] lookupBiGram, String[][][] nextCharLookup, int flag){
-        int mainIndex = getLookupIndex(currentWord,lookupBiGram);
+    private String addCharacter(int desiredLength, String currentWord, int flag){
+        int mainIndex = getLookupIndex(currentWord);
         int type=0;
         if (currentWord.length() == (desiredLength - 1)) {
             type = 1;
         }
-        while (mainIndex < 0 || mainIndex > 263 || nextCharLookup[mainIndex][type].length <= 0){
+        while (mainIndex < 0 || mainIndex > 263 || NEXT_CHAR_LOOKUP[mainIndex][type].length <= 0){
             if (currentWord.length()==2){
-                return pick.in(startBiGram);
+                return pick.in(START_BI_GRAM);
             }
             if (flag == 1) {
                 currentWord = backtrack(currentWord, 2);
@@ -70,16 +70,17 @@ class WordGenerator {
             } else {
                 currentWord = backtrack(currentWord, 1);
             }
-            mainIndex = getLookupIndex(currentWord,lookupBiGram);
+            mainIndex = getLookupIndex(currentWord);
             if (type == 1) {
                 type = 0;
             }
         }
-        return currentWord + getNextCharacter(type,mainIndex,nextCharLookup);
+        return currentWord + getNextCharacter(type,mainIndex);
     }
 
-    private String getNextCharacter(int type, int mainIndex, String[][][] theCharacterVault) {
-        return pick.in(theCharacterVault[mainIndex][type]);
+    private static int getLookupIndex(String theWord) {
+        String lookupCharacters = theWord.substring(theWord.length()-2);
+        return Arrays.asList(LOOKUP_BI_GRAM).indexOf(lookupCharacters);
     }
 
     private static String backtrack(String theWord, int numberChars) {
@@ -87,8 +88,7 @@ class WordGenerator {
         return theWord;
     }
 
-    private static int getLookupIndex(String theWord, String[] lookupArray) {
-        String lookupCharacters = theWord.substring(theWord.length()-2);
-        return Arrays.asList(lookupArray).indexOf(lookupCharacters);
+    private String getNextCharacter(int type, int mainIndex) {
+        return pick.in(NEXT_CHAR_LOOKUP[mainIndex][type]);
     }
 }
