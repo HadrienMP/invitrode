@@ -11,8 +11,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RandomWordProperties {
 
     @Property
-    public void a_word_is_never_blank(@InRange(min = "3", max = "15") int wordLength) {
-        assertThat(toString(new RandomWord(wordLength))).isNotEmpty();
+    public void a_word_is_never_blank() {
+        assertThat(toString(new RandomWord())).isNotEmpty();
     }
 
     @Property
