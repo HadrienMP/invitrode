@@ -1,6 +1,6 @@
 package com.maximeroussy.invitrode;
 
-import com.maximeroussy.invitrode.pick.RandomPick;
+import com.maximeroussy.invitrode.pick.RandomPositiveInteger;
 
 /**
  * Created by maximeroussy on 17/02/16.
@@ -32,7 +32,7 @@ public class RandomWord {
 
     public RandomWord(WordLength wordLength) {
         this.wordLength = wordLength;
-        this.wordGenerator = new WordGenerator(new RandomPick());
+        this.wordGenerator = new WordGenerator(new RandomPositiveInteger());
     }
 
     public String get() {

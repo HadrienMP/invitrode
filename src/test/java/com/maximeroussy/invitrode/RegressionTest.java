@@ -1,7 +1,8 @@
 package com.maximeroussy.invitrode;
 
-import com.maximeroussy.invitrode.pick.PickRecord;
-import com.maximeroussy.invitrode.pick.RandomPick;
+import com.maximeroussy.invitrode.pick.PositiveIntegerRecord;
+import com.maximeroussy.invitrode.pick.PositiveIntegerReplay;
+import com.maximeroussy.invitrode.pick.RandomPositiveInteger;
 import com.pholser.junit.quickcheck.Property;
 import com.pholser.junit.quickcheck.generator.InRange;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
@@ -17,11 +18,12 @@ public class RegressionTest {
         WordLength wordLength = new WordLength(length);
 
         // Legacy
-        PickRecord record = new PickRecord(new RandomPick());
+        PositiveIntegerRecord record = new PositiveIntegerRecord(new RandomPositiveInteger());
         String expected = new LegacyWordGenerator(record).generateWord(wordLength);
 
         // Refactor
-        String actual = new WordGenerator(record.replay()).generateWord(wordLength);
+        PositiveIntegerReplay replay = record.replay();
+        String actual = new WordGenerator(replay).generateWord(wordLength);
 
         // Check
         assertThat(actual).isEqualTo(expected);

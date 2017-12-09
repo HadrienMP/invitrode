@@ -2,9 +2,9 @@ package com.maximeroussy.invitrode.pick;
 
 import java.util.Random;
 
-public class RandomPick implements Pick {
+public class RandomPositiveInteger implements PositiveInteger {
     @Override
-    public int positiveIntegerBelow(int max) {
+    public int below(int max) {
         return new Random().nextInt(max);
     }
 }

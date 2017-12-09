@@ -1,5 +1,18 @@
 package com.maximeroussy.invitrode.pick;
 
-public interface Pick {
-    int positiveIntegerBelow(int max);
+public class Pick {
+    private final PositiveInteger positiveInteger;
+
+    public Pick(PositiveInteger positiveInteger) {
+        this.positiveInteger = positiveInteger;
+    }
+
+    public String itemFrom(String[] strings) {
+        if (strings.length == 0) {
+            throw new NoPickableElementException();
+        }
+        return strings[positiveInteger.below(strings.length)];
+    }
+
+    public static class NoPickableElementException extends RuntimeException {}
 }
