@@ -8,11 +8,6 @@ public class Pick {
     }
 
     public String itemFrom(String[] strings) {
-        if (strings.length == 0) {
-            throw new NoPickableElementException();
-        }
         return strings[positiveInteger.below(strings.length)];
     }
-
-    public static class NoPickableElementException extends RuntimeException {}
 }

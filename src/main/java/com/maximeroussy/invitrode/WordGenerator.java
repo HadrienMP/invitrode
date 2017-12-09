@@ -12,6 +12,7 @@ class WordGenerator {
 
     private static final int BIGRAM_LENGTH = 2;
     private static final int MAX_ATTEMPTS_TO_ATTAIN_LENGTH = 20;
+
     private final Pick pick;
 
     WordGenerator(PositiveInteger positiveInteger) {
@@ -21,8 +22,6 @@ class WordGenerator {
     String generateWord(WordLength wordLength) {
         try {
             return generateRandomWord(wordLength);
-        } catch (Pick.NoPickableElementException e) {
-            return generateWord(wordLength);
         } catch (TooSmallWordException e) {
             return generateWord(wordLength);
         } catch (FailedTooManyTimesException e) {
